@@ -22,24 +22,24 @@ export class AuthService {
     //   return null;
     // }
 
-    async login(user: any) {
-      const payload = { usuario: user.usuario, sub: user.id };
-      const token = this.jwtService.sign(payload)
-      this.tokenService.save(token, user.usuario)
-      return {
-        access_token: token
-      };
-    }
+    // async login(user: any) {
+    //   const payload = { usuario: user.usuario, sub: user.id };
+    //   const token = this.jwtService.sign(payload)
+    //   this.tokenService.save(token, user.usuario)
+    //   return {
+    //     access_token: token
+    //   };
+    // }
 
-    async loginToken(token: string) {
-      let usuario: Cliente = await this.tokenService.getUsuarioByToken(token)
-      if (usuario){
-        return this.login(usuario)
-      }else{
-        return new HttpException({
-          errorMessage: 'Token inválido'
-        }, HttpStatus.UNAUTHORIZED)
-      }
-    }
+    // async loginToken(token: string) {
+    //   let usuario: Cliente = await this.tokenService.getUsuarioByToken(token)
+    //   if (usuario){
+    //     return this.login(usuario)
+    //   }else{
+    //     return new HttpException({
+    //       errorMessage: 'Token inválido'
+    //     }, HttpStatus.UNAUTHORIZED)
+    //   }
+    // }
 
 }

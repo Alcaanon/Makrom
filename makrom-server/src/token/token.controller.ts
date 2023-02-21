@@ -9,10 +9,10 @@ export class TokenController{
         private tokenService: TokenService
     ){}
 
-    @Put('refresh')
-    async refreshToken(@Body() data: RefreshTokenDto){
-        return this.tokenService.refreshToken(data.oldToken)
-    }
+    // @Put('refresh')
+    // async refreshToken(@Body() data: RefreshTokenDto){
+    //     return this.tokenService.refreshToken(data.oldToken)
+    // }
 
     @Get('listartoken')
     async getToken(): Promise<Token[]>{
