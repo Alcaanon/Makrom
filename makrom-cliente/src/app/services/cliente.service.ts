@@ -12,8 +12,8 @@ export class ClienteService {
 
   constructor(private httpClient: HttpClient) { }
 
-  create(data: any): Observable<any>{
-    return this.httpClient.post(clienteURL+'cadastrar',data)
+  create(datacliente: any): Observable<any>{
+    return this.httpClient.post(clienteURL,datacliente)
   }
 
   findAll() {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Cliente } from 'src/app/interfaces/cliente';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class SignupPage implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
+    private clienteService: ClienteService,
     public navCtrl: NavController
 
 
@@ -120,30 +122,38 @@ validaForm(){
 
 cadastro(): void{
   const data = {
-  name: this.cliente.name,
-  email: this.cliente.email,
-  phone: this.cliente.phone,
-  mobilePhone: this.cliente.mobilePhone, 
-  cpfCnpj: this.cliente.cpfCnpj,
-  postalCode: this.cliente.postalCode,
-  address: this.cliente.address,
-  addressNumber: this.cliente.addressNumber,
-  complement: this.cliente.complement,
-  province: this.cliente.province,
-  city: this.cliente.city,
-  state: this.cliente.state,
   usuario: this.usuario.usuario,
   senha: this.usuario.senha
   };
-  this.usuarioService.create(data)
-  .subscribe({
-  next: (res) => {
-  console.log(res);
-  console.log("Usuário cadastrado com sucesso")
+  this.usuarioService.create(data).subscribe({next: (res) => 
+  {
+    console.log(res);
+    console.log("Usuário cadastrado com sucesso")
   // this.navCtrl.navigateForward('/login');
   },
   error: (e) => console.error(e)
   });
+  const datacliente = {
+    name: this.cliente.name,
+    email: this.cliente.email,
+    phone: this.cliente.phone,
+    mobilePhone: this.cliente.mobilePhone, 
+    cpfCnpj: this.cliente.cpfCnpj,
+    postalCode: this.cliente.postalCode,
+    address: this.cliente.address,
+    addressNumber: this.cliente.addressNumber,
+    complement: this.cliente.complement,
+    province: this.cliente.province,
+    city: this.cliente.city,
+    state: this.cliente.state,
+  };
+  this.clienteService.create(datacliente).subscribe({next: (rescli) => 
+    {
+      console.log(rescli);
+      console.log("Cliente cadastrado com sucesso")
+    },
+    error: (e) => console.error(e)
+    });
 }
 
 }

@@ -1,21 +1,21 @@
 import { HttpModule } from '@nestjs/axios/dist';
 import { forwardRef, Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from 'src/auth/auth.module';
 import { DatabaseModule } from '../database/database.module';
 import { ClienteController } from './cliente.controller';
 import { clienteProviders } from './cliente.providers';
-import { ClienteService } from './cliente.service';
 
 @Module({
   imports: [
     DatabaseModule, forwardRef(() => AuthModule),
-    HttpModule
+    HttpModule,
+    ConfigModule
   ],
   controllers: [ClienteController],
   providers: [
     ...clienteProviders,
-    ClienteService,
   ],
-  exports: [ClienteService]
+  exports: []
 })
 export class ClienteModule {}
