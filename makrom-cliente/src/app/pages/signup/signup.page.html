@@ -178,7 +178,7 @@
   
 
   <div class="card-2">
-    <form method="POST" action="https://coopeere.microcampos.com.br/precadastro_insert">
+    <form id="formulario-cadastro" (submit)="cadastro()">
       <input type="hidden" name="_token" value="wun3lLc9eSQ2fu62oCyBWd61pikdzsDXqkCRrD7t">        <input type="hidden" name="_method" value="put">                
       <div class="form-group-heading">Realize o cadastro e torne-se um Coopeerado</div>
 
@@ -189,36 +189,36 @@
         <label class="form-label" for="nome">Nome Completo*</label>
         <div class="col-span-5">
           <div class="input-group">
-            <input type="text" class="form-control" id="nome" name="nome" value="" required>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="cliente.name" required>
           </div>
         </div>
 
         <label class="form-label" for="email">E-mail*</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="email" name="email" value="" required>
+          <input type="text" class="form-control" id="email" name="email" [(ngModel)]="cliente.email" [(ngModel)]="usuario.usuario" required>
         </div>
 
         <label class="form-label" for="cpf_cnpj">CPF/CNPJ*</label>
         <div class="input-group w-60">
-          <input type="text" class="form-control usuario-documento" id="cpf_cnpj" name="cpf_cnpj" value=""
+          <input type="text" class="form-control" id="cpfCnpj" name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj"
             size="25" required>
         </div>
 
         <label class="form-label" for="telefone_celular">Telefone Celular*</label>
         <div class="input-group w-60">
-          <input type="text" class="form-control" id="telefone_celular" name="telefone_celular" size="16"
-              value="" required>
+          <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" [(ngModel)]="cliente.mobilePhone" 
+            size="16" required>
         </div>
 
         <label class="form-label" for="telefone_fixo">Telefone Fixo</label>
         <div class="input-group w-60">
-          <input type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" size="16"
-              value="">
+          <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="cliente.phone" 
+            size="16" required>
         </div>
 
         <label class="form-label" for="senha">Senha*</label>
         <div class="input-group">
-          <input type="password" class="form-control" id="senha" name="senha" required>
+          <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha" required>
         </div>
 
         <label class="form-label" for="confirmar_senha">Confirmar Senha*</label>
@@ -232,13 +232,7 @@
         <div class="col-span-5">
           <div class="flex">
             <div class="input-group w-25">
-              <input class="form-control"
-                  type="text"
-                  id="cep"
-                  name="cep"
-                  value=""
-                  size="10"
-                  required>
+              <input class="form-control" type="text" id="postalCode" name="postalCode" [(ngModel)]="cliente.postalCode" size="10" required>
             </div>
             <div class="p-2 d-none" id="loading-cep">
               <div class="spinner-border spinner-border-sm" role="status">
@@ -253,27 +247,27 @@
 
         <label class="form-label" for="endereco">Endereço*</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="endereco" name="endereco" value="" required>
+          <input type="text" class="form-control" id="address" name="address" [(ngModel)]="cliente.address" required>
         </div>
 
-        <label class="form-label" for="endereco">Número*</label>
+        <label class="form-label" for="numero">Número*</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="numero" name="numero" value="" required>
+          <input type="text" class="form-control" id="addressNumber" name="addressNumber" [(ngModel)]="cliente.addressNumber" required>
         </div>
 
         <label class="form-label" for="bairro">Bairro*</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="bairro" name="bairro" value="" required>
+          <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="cliente.province" required>
         </div>
 
         <label class="form-label" for="cidade">Cidade*</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="cidade" name="cidade" value="" required>
+          <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cliente.city" required>
         </div>
 
         <label class="form-label" for="estado">Estado*</label>
         <div class="input-group">
-          <select class="form-select" id="estado" name="estado" required>
+          <select class="form-select" id="estado" name="estado" [(ngModel)]="cliente.state" required>
             <option value="">UF</option>
             <option  value="AC">Acre</option>
             <option  value="AL">Alagoas</option>

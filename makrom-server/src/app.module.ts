@@ -10,7 +10,8 @@ import { AsaasService } from './services/asaas/asaas.service';
   imports: [
     AuthModule,
     ConfigModule,
-    HttpModule
+    HttpModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService, AsaasService],

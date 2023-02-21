@@ -5,10 +5,12 @@ export class ClienteCadastrarDto{
     mobilePhone: string;
     cpfCnpj: string;
     postalCode: string;
-    adress: string;
-    adressNumber: string;
+    address: string;
+    addressNumber: string;
     complement: string;
     province: string;
+    city: string;
+    state: string;
     externalReference: string;
     notificationDisabled: boolean;
     additionalEmails: string;

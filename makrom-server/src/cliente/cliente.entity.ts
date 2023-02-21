@@ -24,21 +24,27 @@ export class Cliente {
   postalCode: string;
   
   @Column({length: 100})
-  adress: string;
+  address: string;
 
   @Column({length: 10})
-  adressNumber: string;
+  addressNumber: string;
   
   @Column({length: 100})
   complement: string;
 
   @Column({length: 100})
   province: string;
+
+  @Column({length: 100})
+  city: string;
+
+  @Column({length: 100})
+  state: string;
   
   @Column({length: 100})
   externalReference: string;
   
-  @Column('boolean', {default: true})
+  @Column('boolean', {default: false})
   notificationDisabled: boolean;
   
   @Column({length: 100})
