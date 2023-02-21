@@ -1,9 +1,11 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Cliente {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-  @Column({length: 255})
+  @Column({length: 100})
   name: string;
   
   @Column({length: 100})
@@ -36,7 +38,7 @@ export class Cliente {
   @Column({length: 100})
   externalReference: string;
   
-  @Column({length: 10})
+  @Column('boolean', {default: true})
   notificationDisabled: boolean;
   
   @Column({length: 100})

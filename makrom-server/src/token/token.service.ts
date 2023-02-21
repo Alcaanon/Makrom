@@ -16,7 +16,7 @@ export class TokenService {
   ) {}
 
   async save(hash: string, usuario: string){
-    let objToken = await this.tokenRepository.findOneBy({usuario: usuario})
+    let objToken = await this.tokenRepository.findOne({usuario: usuario})
     if (objToken){
       this.tokenRepository.update(objToken.id, {
         hash: hash
@@ -30,7 +30,7 @@ export class TokenService {
   }
 
   async refreshToken(oldToken: string){
-    let objToken = await this.tokenRepository.findOneBy({ hash: oldToken })
+    let objToken = await this.tokenRepository.findOne({ hash: oldToken })
     if (objToken){
       let usuario = await this.usuarioService.findOne(objToken.usuario)      
       return this.authService.login(usuario)
@@ -43,7 +43,7 @@ export class TokenService {
 
   async getUsuarioByToken(token: string): Promise<Usuario>{
     token = token.replace("Bearer ","").trim()
-    let objToken: Token = await this.tokenRepository.findOneBy({hash: token})
+    let objToken: Token = await this.tokenRepository.findOne({hash: token})
     if (objToken){
       let usuario = await this.usuarioService.findOne(objToken.usuario)      
       return usuario
