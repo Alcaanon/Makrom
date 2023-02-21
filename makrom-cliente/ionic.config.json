@@ -1,0 +1,7 @@
+{
+  "name": "makrom-cliente",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

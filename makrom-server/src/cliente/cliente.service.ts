@@ -1,54 +1,41 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { ResultadoDto } from 'src/dto/resultado.dto';
-import { Repository } from 'typeorm';
+import { Injectable } from '@nestjs/common';
+import axios from 'axios';
+import { ConfigService } from '@nestjs/config';
 import { ClienteCadastrarDto } from './dto/cliente.cadastrar.dto';
-import { UpdateClienteDto } from './dto/cliente.update.dto';
+import { ResultadoDto } from 'src/dto/resultado.dto';
 import { Cliente } from './cliente.entity';
-import * as bcrypt from 'bcrypt';
+import { HttpService } from '@nestjs/axios/dist';
 
 @Injectable()
 export class ClienteService {
+
+  private readonly asaasApiUrl = 'https://www.asaas.com/api/v3';
+  private readonly asaasApiKey: string;
+
   constructor(
-    @Inject('USUARIO_REPOSITORY')
-    private usuarioRepository: Repository<Cliente>,
-  ) {}
-
-  /*async listar(): Promise<Usuario[]> {
-    return this.usuarioRepository.find();
+    private readonly configService: ConfigService,
+    private readonly httpService: HttpService
+    ) {
+    this.asaasApiKey = this.configService.get<string>('ASAAS_API_KEY');
   }
 
-  async cadastrar(data: UsuarioCadastrarDto): Promise<ResultadoDto>{
-    let usuario = new Usuario()
-    usuario.usuario = data.usuario
-    usuario.nome = data.nome
-    usuario.telefone = data.telefone
-    usuario.email = data.email
-    usuario.senha = bcrypt.hashSync(data.senha, 8)
-    return this.usuarioRepository.save(usuario)
-    .then((result) => {
-      return <ResultadoDto>{
-        status: true,
-        mensagem: "Usuário cadastrado com sucesso"
-      }
-    })
-    .catch((error) => {
-      return <ResultadoDto>{
-        status: false,
-        mensagem: "Houve um errro ao cadastrar o usuário"
-      }
-    })    
-  }
-  
-  async findOne(usuario: string): Promise<Usuario | undefined> {
-    return this.usuarioRepository.findOne({usuario: usuario});
+  async createCustomers(data: any): Promise<any> {
+    const url = `${this.asaasApiUrl}/customers`;
+    const headers = {  access_token: this.asaasApiKey, 'Content-Type': 'application/json' };
+    const response = await this.httpService.post(url, data, { headers }).toPromise();
+    return response.data;
   }
 
-  
-  update(id: number, updateUserDto: UpdateUsuarioDto) {
-    return this.usuarioRepository.update(id, updateUserDto);
+  async getCustomers() {
+    const url = `${this.asaasApiUrl}/customers`;
+    const response = await axios.get(url, {
+      headers: {
+        access_token: this.asaasApiKey,
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
   }
 
-  remove(id: number) {
-    return this.usuarioRepository.delete(id);
-  }*/
+
 }

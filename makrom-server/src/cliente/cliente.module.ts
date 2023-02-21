@@ -1,3 +1,4 @@
+import { HttpModule } from '@nestjs/axios/dist';
 import { forwardRef, Module } from '@nestjs/common';
 import { AuthModule } from 'src/auth/auth.module';
 import { DatabaseModule } from '../database/database.module';
@@ -6,7 +7,10 @@ import { clienteProviders } from './cliente.providers';
 import { ClienteService } from './cliente.service';
 
 @Module({
-  imports: [DatabaseModule, forwardRef(() => AuthModule)],
+  imports: [
+    DatabaseModule, forwardRef(() => AuthModule),
+    HttpModule
+  ],
   controllers: [ClienteController],
   providers: [
     ...clienteProviders,

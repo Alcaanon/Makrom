@@ -1,0 +1,23 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label [routerLink]="['/info']">Informações Pessoais</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/termos']">Termos de Serviço</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/politica']">Politica de Privacidade</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/alterarsenha']">Alterar Senhas</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="presentAlert()">SAIR</ion-button>
+      <p>{{ handlerMessage }}</p>
+      <p>{{ roleMessage }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

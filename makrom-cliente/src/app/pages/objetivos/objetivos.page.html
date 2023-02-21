@@ -1,0 +1,82 @@
+<ion-header class="header-header">
+  
+  <div [routerLink]="['/login']">
+    <ion-icon name="person"></ion-icon>
+    <ion-label class="label-header" >Login</ion-label>
+  </div>
+    |
+    <div style="padding-left: 15px;" [routerLink]="['/signup']" >
+      <ion-icon name="pencil"></ion-icon>
+      <ion-label >Cadastro</ion-label>
+    </div>
+    
+  
+  </ion-header>
+  
+  <ion-header class="header">
+    
+    
+      <ion-img style="max-width: 10%;" src="../../../assets/images/coopere.png"></ion-img>
+    
+  
+    
+    <ion-button fill="clear" [routerLink]="['/onboarding']">Home</ion-button>
+    
+    <div class="dropdown">
+      <a href="#">A COOPEERE</a>
+      <div class="dropdown-content">
+        <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
+        <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
+        <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+      </div>
+    </div>
+  
+    <ion-button fill="clear" [routerLink]="['/legislacao']">Legislação</ion-button>
+    <ion-button fill="clear" [routerLink]="['/estatuto']">Estatuto</ion-button>
+    <ion-button fill="clear" [routerLink]="['/vantagens']">Vantagens</ion-button>
+    <ion-button fill="clear" [routerLink]="['/parceiros']">Parceiros</ion-button>
+    <ion-button fill="clear" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
+  
+  </ion-header>
+  
+
+<ion-content>
+
+  
+</ion-content>
+
+
+  <ion-footer class="footer"> 
+    
+    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
+  
+    <div class="menu-footer">
+      <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
+      <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
+      <ion-label [routerLink]="['/agenda']">Agenda</ion-label>
+      <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
+      <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
+    </div>
+  
+    <div class="social-media-icons">
+
+<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
+
+<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
+      
+      <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
+      <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
+      <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
+    </div>
+    
+    
+  </ion-footer>
+
+<ion-content>
+
+  <div class="elementor-widget-container">
+    <p>O objetivo principal da <strong>COOPEERE</strong> é a realização de um projeto eólico offshore, reduzir os custos da energia na conta de luz do cooperado, aquecer a economia regional com criação de vagas de emprego no setor técnico em geral e no setor metalúrgico naval, com compromisso no desenvolvimento regional, respeitando as peculiaridades sociais e a vocação econômica local que já vinha crescendo com o progresso petrolífero na região, desenvolvendo soluções de negócios e apoiando ações humanitárias e sócio-ambientais sustentáveis, voltadas ao desenvolvimento da sociedade que se organiza e se fortalece, afim deste parque Eólico Offshore se encaixar perfeitamente no raio X econômico regional que se formou ao longos dos últimos 43 anos com o crescimento petrolífero regional offshore/Industria Naval, mas que hoje passam por uma crise “do preço baixo do petróleo” que impossibilita a maior das petrolíferas no Brasil, A PETROBRÁS e a indústria Naval de reagirem, gerando emprego, riqueza para o Brasil e região face a crise que parece não ter fim.</p>
+<p><strong>A COOPEERE</strong>, entra no cenário atual como uma alternativa, uma força a mais para a sociedade gerando oportunidades sustentáveis através das tecnologias disponíveis no mercado de modo a criar novos postos e novas vagas de trabalho, aquecendo a indústria Naval adormecida pela crise do preço baixo do petróleo, reduzindo o custo da energia elétrica, gerando incentivos para que outras empresas tenham interesse em instalar suas bases em nossa região atraídas pelo baixo preço da energia elétrica que buscamos hoje gerando aumento da renda familiar. Coopere você também fazendo parte como cooperado deste grupo que visa aquecer a nossa economia regional com geração de energia, emprego técnico e lembre-se: A soma de algumas centenas de milhares de cooperados poderá chamar a atenção do Congresso e do Senado pela ausência de investimentos em nossa região. Seja você também uma força a mais, Coopere!</p>
+  </div>
+
+</ion-content>

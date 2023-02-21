@@ -11,8 +11,8 @@ export class AsaasService {
     this.asaasApiKey = this.configService.get<string>('ASAAS_API_KEY');
   }
 
-  async getPayments() {
-    const url = `${this.asaasApiUrl}/payments`;
+  async getCustomers() {
+    const url = `${this.asaasApiUrl}/customers`;
     const response = await axios.get(url, {
       headers: {
         access_token: this.asaasApiKey,

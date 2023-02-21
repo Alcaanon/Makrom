@@ -1,0 +1,77 @@
+<ion-header class="header-header">
+  
+  <div [routerLink]="['/login']">
+    <ion-icon name="person"></ion-icon>
+    <ion-label class="label-header" >Login</ion-label>
+  </div>
+    |
+    <div style="padding-left: 15px;" [routerLink]="['/signup']" >
+      <ion-icon name="pencil"></ion-icon>
+      <ion-label >Cadastro</ion-label>
+    </div>
+    
+  
+  </ion-header>
+  
+  <ion-header class="header">
+    
+    
+      <ion-img style="max-width: 10%;" src="../../../assets/images/coopere.png"></ion-img>
+    
+  
+    
+    <ion-button fill="clear" [routerLink]="['/onboarding']">Home</ion-button>
+    
+    <div class="dropdown">
+      <a href="#">A COOPEERE</a>
+      <div class="dropdown-content">
+        <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
+        <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
+        <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+      </div>
+    </div>
+  
+    <ion-button fill="clear" [routerLink]="['/legislacao']">Legislação</ion-button>
+    <ion-button fill="clear" [routerLink]="['/estatuto']">Estatuto</ion-button>
+    <ion-button fill="clear" [routerLink]="['/vantagens']">Vantagens</ion-button>
+    <ion-button fill="clear" [routerLink]="['/parceiros']">Parceiros</ion-button>
+    <ion-button fill="clear" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
+  
+  </ion-header>
+  
+
+<ion-content>
+
+  
+</ion-content>
+
+
+  <ion-footer class="footer"> 
+    
+    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
+  
+    <div class="menu-footer">
+      <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
+      <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
+      <ion-label [routerLink]="['/agenda']">Agenda</ion-label>
+      <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
+      <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
+    </div>
+  
+    <div class="social-media-icons">
+
+<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
+
+<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
+      
+      <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
+      <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
+      <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
+    </div>
+    
+    
+  </ion-footer>
+
+<ion-content>
+
+</ion-content>

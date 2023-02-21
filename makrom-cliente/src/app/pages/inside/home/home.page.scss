@@ -1,0 +1,138 @@
+.card1 {
+    padding: 1.5%;
+    font-size: 150%;
+}
+
+.row-of-payment-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.class-of-row-of-payment-options {
+    padding: 25px;
+    border-radius: 25px 25px 25px 1px;
+}
+
+.payment-options-h {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.u-payment-options {
+    font-size: 19px
+}
+
+.price {
+    font-size: 52px;
+    font-weight: bold;
+}
+
+.blue-associate {
+    background-color: rgb(163, 220, 220);
+    padding: 20px;
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin: 10px;
+    text-align: start;
+    align-items: left;
+    justify-content: left;
+}
+
+.associate-text {
+    color: #000000;
+    font-weight: normal;
+}
+
+.blue-associate-icon {
+    background-color:blue;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.blue-associate-icon ion-icon {
+    color:#fff;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.card-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 15px;
+}
+
+.card-infos-group {
+   display: flex ;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+}
+
+.red-associate {
+   
+    background-color: rgb(220, 163, 163);
+    padding: 20px;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin: 10px;
+    text-align: start;
+    align-items: left;
+    justify-content: left;
+}
+
+.red-associate-icon {
+    background-color:rgb(255, 0, 0);
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.red-associate-icon ion-icon {
+    color:#fff;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.green-associate {
+   
+    background-color: rgb(164, 247, 146);
+    padding: 20px;
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin: 10px;
+    text-align: start;
+    align-items: left;
+    justify-content: left;
+}
+
+.green-associate-icon {
+    background-color: green;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.green-associate-icon ion-icon {
+    color:#fff;
+    font-size: 30px;
+    font-weight: normal;
+}

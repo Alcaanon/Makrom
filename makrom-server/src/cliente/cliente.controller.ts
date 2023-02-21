@@ -10,9 +10,17 @@ import { ClienteService } from './cliente.service';
 
 @Controller('cliente')
 export class ClienteController {
-  constructor(private readonly usuarioService: ClienteService,
+  
+  constructor(private readonly clienteService: ClienteService,
     private authService: AuthService) {}
 
+
+
+  @Post()
+  async sendData(@Body() data: any) {
+    return this.clienteService.createCustomers(data);
+  }
+  
  /* //@UseGuards(JwtAuthGuard)
   @Get('listar')
   async listar(): Promise<Cliente[]>{

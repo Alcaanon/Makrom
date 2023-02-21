@@ -1,0 +1,320 @@
+
+
+
+<ion-header class="header-header">
+  
+
+
+  <div [routerLink]="['/login']">
+    <ion-icon name="person"></ion-icon>
+    <ion-label class="label-header" >Login</ion-label>
+  </div>
+    |
+    <div style="padding-left: 15px;" [routerLink]="['/signup']" >
+      <ion-icon name="pencil"></ion-icon>
+      <ion-label >Cadastro</ion-label>
+    </div>
+    
+  
+  </ion-header>
+  
+  <ion-header class="header">
+    
+    
+      <ion-img style="max-width: 10%;" src="../../../assets/images-coopeere/coopere.png"></ion-img>
+    
+  
+    
+    <ion-button fill="clear" [routerLink]="['/onboarding']">Sair</ion-button>
+  </ion-header>
+
+  <!--
+
+  
+    <div class="container">
+
+ 
+      <br>
+      <br><br>
+  
+  
+   
+    <ion-card class="container-form">
+        
+        <form [formGroup]="formulario" (submit)="cadastro()">    
+              <div class="welcome-div">
+                <ion-label class="welcome">Seja Bem-Vindo!</ion-label>
+              </div><br><br>
+
+      <div class="inputs">
+
+        <ion-item fill="solid">
+          
+          <div class="input-labels"> 
+            <ion-label position="floating" class="input-label-text">Nome Completo </ion-label>
+          </div>
+
+        <ion-input  type="text"  name="name" id="name" [(ngModel)]="usuario.name" class="form-control" formControlName="name" placeholder="Digite o seu nome completo" ></ion-input>
+      
+      </ion-item>
+    -->
+      <!-- [clearInput]="true" [clearInput]="true"  
+      
+        <ion-item fill="solid">
+
+            <div class="input-labels"> 
+              <ion-label position="floating" class="input-label-text">Email</ion-label>
+            </div>
+          
+            <ion-input  type="email" name="email" id="email"  [(ngModel)]="usuario.email" class="form-control" formControlName="email"  placeholder="Digite o seu email"  ></ion-input>
+        
+          </ion-item>
+  
+
+        <ion-item fill="solid">
+          <div class="input-labels">  
+            <ion-label position="floating" class="input-label-text">Telefone Celular</ion-label>
+         </div>  
+        <ion-input [(ngModel)]="usuario.phonenumber"  type="tel" placeholder="Digite o seu telefone" [clearInput]="true"></ion-input>
+      </ion-item>
+      
+  <br>
+
+  <ion-item fill="solid">
+    <div class="input-labels">  
+      <ion-label position="floating" class="input-label-text">Telefone Fixo</ion-label>
+   </div>  
+  <ion-input [(ngModel)]="usuario.homenumber"  type="tel" placeholder="Digite o seu telefone" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+  <ion-item fill="solid">
+    <div class="input-labels">  
+      <ion-label position="floating" class="input-label-text">CPF/CNPJ</ion-label>
+   </div>  
+  <ion-input [(ngModel)]="usuario.cpfcnpj"  type="number" placeholder="Digite o seu CPF e CNPJ" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+      
+
+        <ion-item fill="solid">
+          <div class="input-labels">  
+            <ion-label position="floating" class="input-label-text">Senha</ion-label>
+         </div>  
+        <ion-input [(ngModel)]="usuario.senha"  type="password" placeholder="Digite a sua senha" [clearInput]="true"></ion-input>
+      </ion-item>
+   
+    
+<ion-item fill="solid">
+  <div class="input-labels">  
+    <ion-label position="floating" class="input-label-text">CEP</ion-label>
+ </div>  
+<ion-input [(ngModel)]="usuario.cep"  type="text" placeholder="Digite o seu CEP" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+
+<ion-item fill="solid">
+  <div class="input-labels">  
+    <ion-label position="floating" class="input-label-text">Endereço</ion-label>
+ </div>  
+<ion-input [(ngModel)]="usuario.address" type="text" placeholder="Digite o seu endereço" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+<ion-item fill="solid">
+  <div class="input-labels">  
+    <ion-label position="floating" class="input-label-text">Bairro</ion-label>
+ </div>  
+<ion-input [(ngModel)]="usuario.nhood" type="text" placeholder="Digite o seu bairro" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+<ion-item fill="solid">
+  <div class="input-labels">  
+    <ion-label position="floating" class="input-label-text">Numero</ion-label>
+ </div>  
+<ion-input [(ngModel)]="usuario.number" type="number" placeholder="Digite o seu numero" [clearInput]="true"></ion-input>
+</ion-item>
+
+<br>
+
+<ion-item fill="solid">
+  <div class="input-labels">  
+    <ion-label position="floating" class="input-label-text">Estado</ion-label>
+ </div>  
+<ion-input [(ngModel)]="usuario.state" type="text" placeholder="Digite o seu estado" ></ion-input>
+</ion-item>
+-->
+<!--  [clearInput]="true" 
+<br>
+    
+
+
+
+  <br>
+        <div>
+          <ion-button type="submit">Entrar</ion-button>
+        </div>
+      </div>
+      
+    </form>
+    
+    <br><br>
+
+
+  
+  -->
+
+
+<ion-content>
+
+  
+
+  <div class="card-2">
+    <form method="POST" action="https://coopeere.microcampos.com.br/precadastro_insert">
+      <input type="hidden" name="_token" value="wun3lLc9eSQ2fu62oCyBWd61pikdzsDXqkCRrD7t">        <input type="hidden" name="_method" value="put">                
+      <div class="form-group-heading">Realize o cadastro e torne-se um Coopeerado</div>
+
+      <div class="form-group grid-cols-6">
+
+        <div class="form-group-title">Dados Pessoais</div>
+
+        <label class="form-label" for="nome">Nome Completo*</label>
+        <div class="col-span-5">
+          <div class="input-group">
+            <input type="text" class="form-control" id="nome" name="nome" value="" required>
+          </div>
+        </div>
+
+        <label class="form-label" for="email">E-mail*</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="email" name="email" value="" required>
+        </div>
+
+        <label class="form-label" for="cpf_cnpj">CPF/CNPJ*</label>
+        <div class="input-group w-60">
+          <input type="text" class="form-control usuario-documento" id="cpf_cnpj" name="cpf_cnpj" value=""
+            size="25" required>
+        </div>
+
+        <label class="form-label" for="telefone_celular">Telefone Celular*</label>
+        <div class="input-group w-60">
+          <input type="text" class="form-control" id="telefone_celular" name="telefone_celular" size="16"
+              value="" required>
+        </div>
+
+        <label class="form-label" for="telefone_fixo">Telefone Fixo</label>
+        <div class="input-group w-60">
+          <input type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" size="16"
+              value="">
+        </div>
+
+        <label class="form-label" for="senha">Senha*</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="senha" name="senha" required>
+        </div>
+
+        <label class="form-label" for="confirmar_senha">Confirmar Senha*</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="confirma_senha" name="confirma_senha" required>
+        </div>
+
+        <div class="form-group-title">Endereço*</div>
+
+        <label class="form-label" for="cep">CEP*</label>
+        <div class="col-span-5">
+          <div class="flex">
+            <div class="input-group w-25">
+              <input class="form-control"
+                  type="text"
+                  id="cep"
+                  name="cep"
+                  value=""
+                  size="10"
+                  required>
+            </div>
+            <div class="p-2 d-none" id="loading-cep">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">
+            O mesmo que consta na conta de energia
+          </small>
+        </div>
+
+        <label class="form-label" for="endereco">Endereço*</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="endereco" name="endereco" value="" required>
+        </div>
+
+        <label class="form-label" for="endereco">Número*</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="numero" name="numero" value="" required>
+        </div>
+
+        <label class="form-label" for="bairro">Bairro*</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="bairro" name="bairro" value="" required>
+        </div>
+
+        <label class="form-label" for="cidade">Cidade*</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="cidade" name="cidade" value="" required>
+        </div>
+
+        <label class="form-label" for="estado">Estado*</label>
+        <div class="input-group">
+          <select class="form-select" id="estado" name="estado" required>
+            <option value="">UF</option>
+            <option  value="AC">Acre</option>
+            <option  value="AL">Alagoas</option>
+            <option  value="AP">Amapá</option>
+            <option  value="AM">Amazonas</option>
+            <option  value="BA">Bahia</option>
+            <option  value="CE">Ceará</option>
+            <option  value="DF">Distrito Federal</option>
+            <option  value="ES">Espírito Santo</option>
+            <option  value="GO">Goiás</option>
+            <option  value="MA">Maranhão</option>
+            <option  value="MT">Mato Grosso</option>
+            <option  value="MS">Mato Grosso do Sul</option>
+            <option  value="MG">Minas Gerais</option>
+            <option  value="PA">Pará</option>
+            <option  value="PB">Paraíba</option>
+            <option  value="PR">Paraná</option>
+            <option  value="PE">Pernambuco</option>
+            <option  value="PI">Piauí</option>
+            <option  value="RJ">Rio de Janeiro</option>
+            <option  value="RN">Rio Grande do Norte</option>
+            <option  value="RS">Rio Grande do Sul</option>
+            <option  value="RO">Rondônia</option>
+            <option  value="RR">Roraima</option>
+            <option  value="SC">Santa Catarina</option>
+            <option  value="SP">São Paulo</option>
+            <option  value="SE">Sergipe</option>
+            <option  value="TO">Tocantins</option>
+          </select>
+        </div>
+
+        <div class="form-actions mt-4">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</ion-content>
+
+
+
+<ion-footer></ion-footer>

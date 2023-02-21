@@ -9,7 +9,7 @@ export const databaseProviders = [
       port: 3306,
       username: 'root',
       password: '',
-      database: 'Makrom',
+      database: 'makrom',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
       ],
