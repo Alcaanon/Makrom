@@ -1,14 +1,11 @@
-export class UsuarioCadastrarDto{
-    id: number;
+export class ClienteCadastrarDto{
     name: string;
     cpfCnpj: string;
     email: string;
     phone: string;
     mobilePhone: string;
-    address: string;
     adressNumber: string;
     complement: string;
-    province: string;
     postalCode: string;
     externalReference: string;
     notificationDisabled: boolean;

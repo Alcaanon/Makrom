@@ -1,19 +1,19 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ResultadoDto } from 'src/dto/resultado.dto';
 import { Repository } from 'typeorm';
-import { UsuarioCadastrarDto } from './dto/usuario.cadastrar.dto';
-import { UpdateUsuarioDto } from './dto/usuario.update.dto';
-import { Usuario } from './usuario.entity';
+import { ClienteCadastrarDto } from './dto/cliente.cadastrar.dto';
+import { UpdateClienteDto } from './dto/cliente.update.dto';
+import { Usuario } from './cliente.entity';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
-export class UsuarioService {
+export class ClienteService {
   constructor(
     @Inject('USUARIO_REPOSITORY')
     private usuarioRepository: Repository<Usuario>,
   ) {}
 
-  async listar(): Promise<Usuario[]> {
+  /*async listar(): Promise<Usuario[]> {
     return this.usuarioRepository.find();
   }
 
@@ -50,5 +50,5 @@ export class UsuarioService {
 
   remove(id: number) {
     return this.usuarioRepository.delete(id);
-  }
+  }*/
 }

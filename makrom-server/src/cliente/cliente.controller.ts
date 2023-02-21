@@ -3,24 +3,24 @@ import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from 'src/auth/auth.service';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { ResultadoDto } from 'src/dto/resultado.dto';
-import { UsuarioCadastrarDto } from './dto/usuario.cadastrar.dto';
-import { UpdateUsuarioDto } from './dto/usuario.update.dto';
-import { Usuario } from './usuario.entity';
-import { UsuarioService } from './usuario.service';
+import { ClienteCadastrarDto } from './dto/cliente.cadastrar.dto';
+import { UpdateClienteDto } from './dto/cliente.update.dto';
+import { Cliente } from './cliente.entity';
+import { ClienteService } from './cliente.service';
 
-@Controller('usuario')
-export class UsuarioController {
-  constructor(private readonly usuarioService: UsuarioService,
+@Controller('cliente')
+export class ClienteController {
+  constructor(private readonly usuarioService: ClienteService,
     private authService: AuthService) {}
 
-  //@UseGuards(JwtAuthGuard)
+ /* //@UseGuards(JwtAuthGuard)
   @Get('listar')
-  async listar(): Promise<Usuario[]>{
+  async listar(): Promise<Cliente[]>{
       return this.usuarioService.listar()
   }
 
   @Post('cadastrar')
-  async cadastrar(@Body() data: UsuarioCadastrarDto): Promise<ResultadoDto>{    
+  async cadastrar(@Body() data: ClienteCadastrarDto): Promise<ResultadoDto>{    
     return this.usuarioService.cadastrar(data)    
   }
 
@@ -36,12 +36,12 @@ export class UsuarioController {
   }
   
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUsuarioDto) {
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateClienteDto) {
     return this.usuarioService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usuarioService.remove(+id);
-  }
+  }*/
 }
