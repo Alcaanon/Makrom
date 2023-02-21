@@ -3,14 +3,14 @@ import { ResultadoDto } from 'src/dto/resultado.dto';
 import { Repository } from 'typeorm';
 import { ClienteCadastrarDto } from './dto/cliente.cadastrar.dto';
 import { UpdateClienteDto } from './dto/cliente.update.dto';
-import { Usuario } from './cliente.entity';
+import { Cliente } from './cliente.entity';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class ClienteService {
   constructor(
     @Inject('USUARIO_REPOSITORY')
-    private usuarioRepository: Repository<Usuario>,
+    private usuarioRepository: Repository<Cliente>,
   ) {}
 
   /*async listar(): Promise<Usuario[]> {
