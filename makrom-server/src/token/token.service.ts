@@ -15,8 +15,8 @@ export class TokenService {
     private authService: AuthService
   ) {}
 
-  async save(hash: string, usuario: string){
-    let objToken = await this.tokenRepository.findOne({usuario: usuario})
+  async save(hash: string, email: string){
+    let objToken = await this.tokenRepository.findOne({email: email})
     if (objToken){
       this.tokenRepository.update(objToken.id, {
         hash: hash
@@ -24,7 +24,7 @@ export class TokenService {
     }else{
       this.tokenRepository.insert({
         hash: hash,
-        usuario: usuario
+        email: email
       })
     }
   }
@@ -32,8 +32,8 @@ export class TokenService {
   async refreshToken(oldToken: string){
     let objToken = await this.tokenRepository.findOne({ hash: oldToken })
     if (objToken){
-      let usuario = await this.usuarioService.findOne(objToken.usuario)      
-      return this.authService.login(usuario)
+      let email = await this.usuarioService.findOne(objToken.email)      
+      return this.authService.login(email)
     }else{
       return new HttpException({
         errorMessage: 'Token inválido'
@@ -45,7 +45,7 @@ export class TokenService {
     token = token.replace("Bearer ","").trim()
     let objToken: Token = await this.tokenRepository.findOne({hash: token})
     if (objToken){
-      let usuario = await this.usuarioService.findOne(objToken.usuario)      
+      let usuario = await this.usuarioService.findOne(objToken.email)      
       return usuario
     }else{
       return null

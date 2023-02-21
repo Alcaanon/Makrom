@@ -9,6 +9,6 @@ export class Token {
   hash: string;
 
   @Column({ length: 100 })
-  usuario: string;
+  email: string;
 
 }
