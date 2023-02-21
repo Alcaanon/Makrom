@@ -20,8 +20,6 @@ export class UsuarioService {
   async cadastrar(data: UsuarioCadastrarDto): Promise<ResultadoDto>{
     let usuario = new Usuario()
     usuario.usuario = data.usuario
-    usuario.nome = data.nome
-    usuario.telefone = data.telefone
     usuario.email = data.email
     usuario.senha = bcrypt.hashSync(data.senha, 8)
     return this.usuarioRepository.save(usuario)
@@ -40,7 +38,7 @@ export class UsuarioService {
   }
   
   async findOne(usuario: string): Promise<Usuario | undefined> {
-    return this.usuarioRepository.findOne({usuario: usuario});
+    return this.usuarioRepository.findOneBy({usuario: usuario});
   }
 
   
