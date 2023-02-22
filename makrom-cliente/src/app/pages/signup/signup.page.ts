@@ -86,7 +86,7 @@ cliente: Cliente = {
 
 usuario: Usuario = {
   id: 0,
-  usuario: "",
+  email: "",
   senha: ""
 }
 
@@ -114,7 +114,6 @@ validaForm(){
     stateInscription: ['', [Validators.required]],
     observations: ['', [Validators.required]],
     groupname: ['', [Validators.required]],
-    usuario: ['', [Validators.required]],
     email: ['', [Validators.required]],
     senha: ['', [Validators.required]]
   });
@@ -122,7 +121,7 @@ validaForm(){
 
 cadastro(): void{
   const data = {
-  usuario: this.usuario.usuario,
+  email: this.usuario.email,
   senha: this.usuario.senha
   };
   this.usuarioService.create(data).subscribe({next: (res) => 

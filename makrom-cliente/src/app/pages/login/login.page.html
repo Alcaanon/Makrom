@@ -38,50 +38,43 @@
 
 
 <ion-content>
-
-  <div class="container">
-
- 
-    <br>
-    <br><br>
-
-
- 
-  <ion-card class="container-form">
-    
-    <div class="welcome-div">
-      <ion-label class="welcome">Seja Bem-Vindo!</ion-label>
-    </div>
-<br><br>
-    <div class="inputs">
-    
-      <ion-item fill="solid">
+  <form  (submit)="onSubmit()">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <ion-card class="container-form">
+        <div class="welcome-div">
+        </div>
+      <br>
+      <br>
+        <div class="inputs">
+          <ion-item fill="solid">
           <div class="input-labels"> 
             <ion-label position="floating" class="input-label-text">Email</ion-label>
           </div>
-        <ion-input  type="email" placeholder="Digite o seu email" [clearInput]="true" ></ion-input>
-      </ion-item>
-
-      <ion-item fill="solid">
-        <div class="input-labels">  
-          <ion-label position="floating" class="input-label-text">Senha</ion-label>
-       </div>  
-      <ion-input type="password" placeholder="Digite a sua senha" [clearInput]="true"></ion-input>
-    </ion-item>
+            <ion-input  type="email" placeholder="Digite o seu email" type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="login.usuario" [clearInput]="true" ></ion-input>
+          </ion-item>
+          <ion-item fill="solid">
+            <div class="input-labels">  
+              <ion-label position="floating" class="input-label-text">Senha</ion-label>
+            </div>  
+            <ion-input type="password" placeholder="Digite a sua senha"  class="form-control" id="senha" name="senha" [(ngModel)]="login.senha" [clearInput]="true"></ion-input>
+          </ion-item>
+        </div>
+        <br>  
+        <div>
+          <ion-button  type="submit">Entrar</ion-button>
+        </div>
+        <ion-item>
+          <ion-label>Clique para salvar neste dispositivo</ion-label>
+          <ion-radio slot="start" ></ion-radio>
+        </ion-item>
+      </ion-card>
+      <br>
+      <br>
     </div>
-<br>
-      <div>
-        <ion-button>Entrar</ion-button>
-      </div>
-    <ion-item>
-      <ion-label>Clique para salvar neste dispositivo</ion-label>
-      <ion-radio slot="start" ></ion-radio>
-    </ion-item>
-    
-
-  </ion-card>
-  <br><br>
-</div>
+  </form>
 </ion-content>
 
 
