@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { Controller, Post, Body, Get, Delete, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Delete, Param, UseGuards } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 require('dotenv').config();
 
@@ -13,6 +14,8 @@ export class ClienteController {
 
   constructor( private httpService: HttpService) {}
 
+  
+    // @UseGuards(JwtAuthGuard)
     @Post()
     async createCustomers(@Body() datacliente: any): Promise<any> {
       const url = `${this.asaasApiUrl}/customers`;

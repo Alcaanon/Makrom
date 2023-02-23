@@ -128,7 +128,6 @@ cadastro(): void{
   {
     console.log(res);
     console.log("Usuário cadastrado com sucesso")
-   this.navCtrl.navigateForward('/login');
   },
   error: (e) => console.error(e)
   });
@@ -150,6 +149,7 @@ cadastro(): void{
     {
       console.log(rescli);
       console.log("Cliente cadastrado com sucesso")
+      this.navCtrl.navigateForward('/login');
     },
     error: (e) => console.error(e)
     });
