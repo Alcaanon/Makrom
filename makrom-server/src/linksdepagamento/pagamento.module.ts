@@ -3,7 +3,7 @@ import { forwardRef, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from 'src/auth/auth.module';
 import { DatabaseModule } from '../database/database.module';
-import { AssinaturaController } from './assinatura.controller';
+import { PagamentoController } from './pagamento.controller';
 
 @Module({
   imports: [
@@ -11,9 +11,9 @@ import { AssinaturaController } from './assinatura.controller';
     HttpModule,
     ConfigModule
   ],
-  controllers: [AssinaturaController],
+  controllers: [PagamentoController],
   providers: [
   ],
   exports: []
 })
-export class AssinaturaModule {}
+export class PagamentoModule {}
