@@ -1,7 +1,5 @@
 {
-  "name": "makrom-cliente",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "crud_frontend",
+  "integrations": {},
   "type": "angular"
 }

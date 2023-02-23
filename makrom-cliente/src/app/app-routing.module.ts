@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
+/*   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+  }, */
   {
     path: 'info',
     loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule)
@@ -32,6 +32,10 @@ const routes: Routes = [
   },
   {
     path: 'onboarding',
+    loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+  },
+  {
+    path: '',
     loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
   },
   {
@@ -230,14 +234,6 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/inside/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'exemplo',
-    loadChildren: () => import('./pages/exemplo/exemplo.module').then( m => m.ExemploPageModule)
-  },
-  {
-    path: 'trabalheconosco',
-    loadChildren: () => import('./pages/trabalheconosco/trabalheconosco.module').then( m => m.TrabalheconoscoPageModule)
   }
 
 ];
