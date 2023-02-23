@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
+import { AssinaturaModule } from 'src/assinatura/assinatura.module';
 import { ClienteModule } from 'src/cliente/cliente.module';
 import { TokenModule } from 'src/token/token.module';
 import { UsuarioModule } from 'src/usuario/usuario.module';
@@ -11,6 +12,7 @@ import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports: [
+    AssinaturaModule,
     ClienteModule,
     UsuarioModule, 
     PassportModule, 

@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const ASAAS_API_KEY = process.env.ASAAS_API_KEY;
 
-@Controller('customers')
+@Controller('subscription')
 export class AssinaturaController {
 
   private readonly asaasApiUrl = 'https://www.asaas.com/api/v3';
@@ -13,7 +13,7 @@ export class AssinaturaController {
   constructor() {}
 
     @Post()
-    async createCustomers(@Body() datacliente: any): Promise<any> {
+    async createSubscription(@Body() datacliente: any): Promise<any> {
       const url = `${this.asaasApiUrl}/subscription`;
       const headers = {  access_token: ASAAS_API_KEY, 'Content-Type': 'application/json' };
       const response = await axios.post(url, datacliente, { headers });
