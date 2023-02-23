@@ -3,6 +3,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AssinaturaModule } from 'src/assinatura/assinatura.module';
 import { ClienteModule } from 'src/cliente/cliente.module';
+import { CobrancaModule } from 'src/cobranca/cobranca.module';
 import { TokenModule } from 'src/token/token.module';
 import { UsuarioModule } from 'src/usuario/usuario.module';
 import { AuthService } from './auth.service';
@@ -14,6 +15,7 @@ import { LocalStrategy } from './local.strategy';
   imports: [
     AssinaturaModule,
     ClienteModule,
+    CobrancaModule,
     UsuarioModule, 
     PassportModule, 
     TokenModule, 
