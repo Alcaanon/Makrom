@@ -31,6 +31,14 @@ export class ClienteController {
       const response = await axios.get(url, {headers});
       return response.data;
     }
+    
+    @Get(':id')
+    async getCustomer(@Param('id') id: string): Promise<any> {
+      const url = `${this.asaasApiUrl}/customers`;
+      const headers = {  access_token: ASAAS_API_KEY, 'Content-Type': 'application/json' };
+      const response = await axios.get(url + `/${id}`, {headers});
+      return response.data;
+    }
 
     @Delete(':id')
     async deleteCustomer(@Param('id') id: string): Promise<any> {
@@ -47,5 +55,4 @@ export class ClienteController {
       const response = await axios.post(url + `/${id}`, datacliente, {headers});
       return response.data;
     }
-
 }

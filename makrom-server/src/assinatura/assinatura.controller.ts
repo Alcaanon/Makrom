@@ -20,10 +20,26 @@ export class AssinaturaController {
       const response = await axios.post(url, datacliente, { headers });
       return response.data;
     }
-
+    
     @Get()
-    async getSubscription() {
+    async getSubscriptions() {
       const url = `${this.asaasApiUrl}/subscriptions`;
+      const headers = {  access_token: ASAAS_API_KEY, 'Content-Type': 'application/json' };
+      const response = await axios.get(url, {headers});
+      return response.data;
+    }
+    
+    @Get(':id')
+    async getSubscription(@Param('id') id: string): Promise<any> {
+      const url = `${this.asaasApiUrl}/subscriptions`;
+      const headers = {  access_token: ASAAS_API_KEY, 'Content-Type': 'application/json' };
+      const response = await axios.get(url + `/${id}`, {headers});
+      return response.data;
+    }
+    
+    @Get(':id')
+    async getSubscriptionPays(@Param('id') id: string): Promise<any> {
+      const url = `${this.asaasApiUrl}/subscriptions/${id}/payments`;
       const headers = {  access_token: ASAAS_API_KEY, 'Content-Type': 'application/json' };
       const response = await axios.get(url, {headers});
       return response.data;
