@@ -4,6 +4,7 @@ import { PassportModule } from '@nestjs/passport';
 import { AssinaturaModule } from 'src/assinatura/assinatura.module';
 import { ClienteModule } from 'src/cliente/cliente.module';
 import { CobrancaModule } from 'src/cobranca/cobranca.module';
+import { PagamentoModule } from 'src/linksdepagamento/pagamento.module';
 import { TokenModule } from 'src/token/token.module';
 import { UsuarioModule } from 'src/usuario/usuario.module';
 import { AuthService } from './auth.service';
@@ -16,6 +17,7 @@ import { LocalStrategy } from './local.strategy';
     AssinaturaModule,
     ClienteModule,
     CobrancaModule,
+    PagamentoModule,
     UsuarioModule, 
     PassportModule, 
     TokenModule, 
