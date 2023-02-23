@@ -128,7 +128,7 @@ cadastro(): void{
   {
     console.log(res);
     console.log("Usuário cadastrado com sucesso")
-  // this.navCtrl.navigateForward('/login');
+   this.navCtrl.navigateForward('/login');
   },
   error: (e) => console.error(e)
   });

@@ -17,7 +17,7 @@ export class UsuarioService {
   }
 
   findAll() {
-    return this.httpClient.get(usuarioURL+'all');
+    return this.httpClient.get(usuarioURL+'listar');
   }
 
   findOne(data: any): Observable<any>{

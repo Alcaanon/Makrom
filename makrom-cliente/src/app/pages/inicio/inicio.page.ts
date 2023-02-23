@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor() { }
+  users!: Observable<any>;
+
+  constructor(
+    private usersService: UsuarioService,
+  ) { }
 
   ngOnInit() {
+    this.users= this.usersService.findAll();
   }
-
 }
