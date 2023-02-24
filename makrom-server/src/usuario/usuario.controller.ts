@@ -13,7 +13,7 @@ export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService,
     private authService: AuthService) {}
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('listar')
   async listar(): Promise<Usuario[]>{
       return this.usuarioService.listar()
