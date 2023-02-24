@@ -64,7 +64,7 @@
       <div class="row justify-content-end align-items-center">
         <div class="col-md-4">
           <div class="d-flex w-100">
-            <form action="" method="post" class="form px-5 py-4 card animate__animated animate__slideInRight">
+            <form  (submit)="onSubmit()">
 
               <div class="text-center mb-3">
                 <div class="logo">
@@ -92,7 +92,7 @@
                 <span class="input-group-text">
                   <i class="fas fa-envelope"></i>
                 </span>
-                <input type="email" class="form-control" name="email" placeholder=" " id="email" wfd-id="id2">
+                <input type="email" class="form-control" name="email" placeholder=" "  [(ngModel)]="login.usuario" id="email" wfd-id="id2">
                 <label for="email" class="input-group-label">E-mail</label>
               </div>
 
@@ -100,7 +100,7 @@
                 <span class="input-group-text">
                   <i class="fas fa-lock"></i>
                 </span>
-                <input type="password" class="form-control" name="senha" placeholder=" " id="password" wfd-id="id3">
+                <input type="password" class="form-control" name="senha" placeholder=" " [(ngModel)]="login.senha" id="password" wfd-id="id3">
                 <label for="password" class="input-group-label">Senha</label>
               </div>
 
