@@ -13,20 +13,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-
   
-  selectedOption: string = '';
- 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
     private clienteService: ClienteService,
     public navCtrl: NavController
-
-
     ) {}
-
+    
+  selectedOption: string = '';
+  
   goToPage(option: string) {
     switch (option) {
       case 'option1':
@@ -60,10 +57,7 @@ ngOnInit(): void{
   this.validaForm();
 }
 
-
 cliente: Cliente = {
-  
- 
   name: "",
   email: "",
   phone: "",
@@ -87,16 +81,14 @@ cliente: Cliente = {
 usuario: Usuario = {
   id: 0,
   email: "",
-  senha: ""
+  senha: "",
+  confirma_senha: ""
 }
-
-
 
 formulario!: FormGroup;
 
 validaForm(){
   this.formulario = this.formBuilder.group({
-    
     name: ['', [Validators.required]],
     cpfCnpj: ['', [Validators.required]],
     phone: ['', [Validators.required]],
@@ -115,8 +107,19 @@ validaForm(){
     observations: ['', [Validators.required]],
     groupname: ['', [Validators.required]],
     email: ['', [Validators.required]],
-    senha: ['', [Validators.required]]
+    senha: ['', [Validators.required]],
+    confirma_senha: ['', [Validators.required,  this.equalTo('senha')]],
   });
+}
+
+equalTo(field_name: string) {
+  return (control: any) => {
+    const field = control.parent?.get(field_name);
+    if (field && control.value !== field.value) {
+      return { equalTo: true };
+    }
+    return null;
+  };
 }
 
 cadastro(): void{

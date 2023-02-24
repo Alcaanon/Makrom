@@ -67,7 +67,7 @@ ion-slide button {
     margin-top: 200px;
     padding: 15px;
     border-radius: 50px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 @media (max-width: 767px) {
@@ -93,7 +93,7 @@ ion-slide button {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 .label-header {
@@ -105,7 +105,7 @@ ion-slide button {
     padding: 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -192,7 +192,7 @@ ion-input {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 .select-text {
@@ -238,7 +238,7 @@ ion-input {
 
 
   ion-header {
-   position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -282,7 +282,7 @@ ion-input {
   }
 
   .header-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -320,5 +320,103 @@ ion-input {
     }
 
 
+
+  }
+
+  /* ADICIONEI ESSAS LINHAS DE CSS ABAIXO
+  PARA NÃO SOBREESCREVER O QUE JÁ TINHA E MOSTRAR O QUE EU FIZ*/
+
+  ion-header {
+    
+    position: absolute;
+    top: 25px;
+    
+    
+
+    &::after {
+        display: none;
+    }
+
+    .dropdown {
+        
+    }
+    .dropdown-content {
+        min-width: 133px;
+        
+    }
+    .dropdown-item {
+        display: block;
+        height: 50px;
+        padding: 20px;
+        transition: .4s;
+
+        &::before {
+            content: none;
+        }
+        &:hover{
+            color: white;
+            background-color: #7B9A6E;
+            border: none;
+        }
+    }
+    .arrowicon {
+    
+    }
+    a{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        margin: 20px;
+        display: inline-block;
+    }
+
+    ion-button {
+        cursor: pointer;
+    }
+
+    ion-button, a {
+
+        display: block;
+        margin: 0;
+        position: relative;
+        color: #2a302f;
+        white-space: nowrap;
+        font-size: 14px;
+        font-family: "Open Sans", Sans-serif;
+        font-weight: 00;
+        padding: 0px 5px 0px 5px;
+        padding-bottom: 35px;
+        border-bottom: 5px solid transparent;
+        height: 65px;
+        transition: .4s;
+
+        &:hover {
+            color: #7B9A6E;
+            
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            width: 0;
+            right: 0;
+            bottom: 0;
+            height: 5px;
+            background: #2B571A;
+            transition: width .2s;
+
+        }
+        &:hover::before {
+            width: 100%;
+        }
+    }
+
+    .active-link:before {
+        
+        width: 100%;
+        color: #7B9A6E;
+
+    }
 
   }
