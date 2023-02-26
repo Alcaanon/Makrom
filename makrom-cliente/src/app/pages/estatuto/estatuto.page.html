@@ -1,3 +1,5 @@
+<ion-content>
+
 <ion-header class="header-header">
   
   <div [routerLink]="['/login']">
@@ -40,20 +42,56 @@
   </ion-header>
   
 
-<ion-content>
+
+
+  <div class="minimum-header">
+
+        
+    <ion-img class="logo-min-header" [routerLink]="['/onboarding']"  src="../../../assets/images-coopeere/coopere.png"></ion-img>
+
+   
+    
+
+    <!-- TESTANDO O MENU HAMBURGUER COM DROPDOWN -->
+<div class="menu-min-header">
+    <nav class="thenav">
+      <div class="hamburger-menu-X" (click)="toggleMenu()">
+        <div class="bar-X"></div>
+        <div class="bar-X"></div>
+        <div class="bar-X"></div>
+      </div>
+      <ul class="menu-items-X" *ngIf="showMenu">
+        <br>
+        <li><a [routerLink]="['/onboarding']" routerLinkActive="active-link">Home</a></li>
+        <li><a href="#">A Coopeere</a></li>
+        <li><a [routerLink]="['/estatuto']" routerLinkActive="active-link">Estatuto</a></li>
+        <li><a href="#">Legislação</a></li>
+        <li><a [routerLink]="['/vantagens']" routerLinkActive="active-link">Vantagens</a></li>
+        <li><a href="#">Parceiros</a></li>
+        <li><a href="#">Fale Conosco</a></li>
+        
+
+        
+      </ul>
+    </nav>
+  </div>   
+    
+    <!-- FIM DO TESTE DO MENU HAMBURRGUER COM DROPDOWN -->
+
+
+    <ion-icon name="search" class="search-min-header">Procurar</ion-icon>
+  </div>
 
 
   <ion-label class="estatuto-label">Estatuto</ion-label>
-<br><br>
-  <iframe class="pdf-estatuto" src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/estatuto-coopere.pdf" width="500" height="375"></iframe>
+<br>
+  <iframe class="pdf-estatuto" src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/estatuto-coopere.pdf" ></iframe>
 
 
-</ion-content>
 
 
   <ion-footer class="footer"> 
-    
-    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
+   
   
     <div class="menu-footer">
       <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
@@ -77,3 +115,4 @@
     
   </ion-footer>
 
+</ion-content>

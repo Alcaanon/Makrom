@@ -1,63 +1,3 @@
-
-.carousel {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slide {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide:first-child {
-    display: block;
-}
-
-
-ion-slide {
-   position: relative;
-}
-
-ion-slide h1, ion-slide p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: flex-start;
-    font-size: 80px;
-    width: 50%;
-}
-
-ion-slide button {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 30px;
-    width: 250px;
-    margin-top: 200px;
-    padding: 15px;
-    border-radius: 50px;
-    background-color: green;
-}
-
-
-.container {
-    background-image: url("https://media.gazetadopovo.com.br/2019/06/08112107/energia-eolica-660x372.jpg");
-    background-size: cover;
-}
 .header-header {
     align-items: flex-end;
     justify-content: flex-end;
@@ -66,7 +6,7 @@ ion-slide button {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: green;
+    background-color: rgba(43,87,23);
 }
 
 .label-header {
@@ -74,106 +14,20 @@ ion-slide button {
     padding-left: 10px;
 }
 
+#logo{
+    position: relative;
+    right: 55px;
+    cursor: pointer;
+}
+
 .header {
-    padding: 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
+    text-align: center;
+    padding-top: 9px;
 }
-
-.lista-dropdown{
-    border-radius: 20px;
-    padding-right: 10px;
-}
-
-.welcome {
-    padding-top: 30px;
-    font-size: 35px;
-    font-weight: bold;
-    
-}
-
-.welcome-div {
-    padding-top: 30px ;
-}
-
-.logo {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  
-    margin: auto;
-}
-
-.container-form {
-    
-    max-width: 500px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 10px;
-    margin: auto;
-    flex-direction: column;
-    border-radius: 20px;
-
-}
-
-ion-input {
-
-    
-    border-radius: 10px;
-    min-width: 300px;
-    max-width: 400px;
-}
-
-.inputs {
-    padding: 10px;
-}
-
-.input-labels {
-    padding: 10px;
-}
-
-.input-label-text {
-    font-weight: bold;
-    font-size: 17px;
-}
-
-.menu-footer {
-    gap: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    align-items: flex-start;   
-    margin: auto;
-}
-
-.social-media-icons{
-    gap: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer {
-   align-items: flex-end;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    padding-right: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: green;
-}
-
-.select-text {
-    &:hover {
-      opacity: 0.75;
-      cursor: pointer;
-    }
-  }
 
   .dropdown {
     position: relative;
@@ -202,4 +56,183 @@ ion-input {
 
   .dropdown-item:hover {
     background-color: #f1f1f1;
+  }
+
+  /*Header*/
+
+  ion-header {
+
+    &::after {
+        display: none;
+    }
+
+    .dropdown-content {
+        min-width: 133px;
+        
+    }
+    .dropdown-item {
+        display: block;
+        height: 50px;
+        padding: 20px;
+        transition: .4s;
+
+        &::before {
+            content: none;
+        }
+        &:hover{
+            color: white;
+            background-color: #7B9A6E;
+            border: none;
+        }
+    }
+    a{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        margin: 20px;
+        display: inline-block;
+    }
+
+    ion-button, a {
+
+        cursor: pointer;
+        display: block;
+        margin: 0;
+        position: relative;
+        color: #333;
+        white-space: nowrap;
+        font-size: 14px;
+        //font-family: "Open Sans", "Sans-serif";
+        font-weight: 500;
+        padding: 40px 5px;  
+        border-bottom: 5px solid transparent;
+        height: 112px;
+        transition: .4s;
+
+        &:hover {
+            color: #7B9A6E;
+            
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            width: 0;
+            right: 0;
+            height: 5px;
+            background: #2B571A;
+            transition: width .2s;
+
+        }
+        &:hover::before {
+            width: 100%;
+        }
+    }
+
+    .active-link:before {
+        
+        width: 100%;
+        color: #7B9A6E;
+
+    }
+    .search{
+        font-size: 25px;
+        color: #2B571A;
+        cursor: pointer;
+
+    }
+    .arrowicon{
+        position: relative;
+        top: 5px;
+    }
+
+  }
+
+
+  /*body*/
+  
+  .container{
+
+    display: flex;
+    position: relative;
+    margin-left: 19%;
+    max-width: 59.2%;
+    left: 25px;
+    top: 19px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    line-height: 2;
+    justify-content: space-between;
+
+    .title{
+    color: #6d7882;
+    font-size: 37px;
+    font-weight: 300;
+    //font-family: "Open Sans", "Sans-serif";
+    margin-bottom: 40px;
+    }
+    section{
+        line-height: 1.6em;      
+        //font-family: "Open Sans", "Sans-serif";
+        h2{
+            font-size: 32px;
+        }
+        h3{
+            font-size: 28px;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 32.4px;
+        }
+    }
+
+    ion-list{
+        text-transform: uppercase;
+        list-style: none;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        
+        
+        ion-label{
+            cursor: pointer;
+            margin: 0;
+            width: 300px;
+            position: relative;
+            color: #2a302f;
+            font-size: 1rem;
+           // font-family: "Open Sans", "Sans-serif";
+            font-weight: 400;
+            padding: 13px 20px;
+            transition: .4s;
+    
+            &:hover {
+                color: #7B9A6E;
+                
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                right: 0;
+                bottom: 0;
+                height: 3px;
+                background: #7B9A6E;
+    
+            }
+            &:hover::before {
+                width: 100%;
+            }
+        }
+        .active-link:before {
+        
+            width: 100%;
+            color: #7B9A6E;
+        
+        }
+    }
   }

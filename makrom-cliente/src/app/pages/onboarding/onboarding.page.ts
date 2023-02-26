@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class OnboardingPage implements OnInit  {
 
-  showMenu = false;
+  showMenu: boolean = false;
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.showMenu = !this.showMenu;
   }
 

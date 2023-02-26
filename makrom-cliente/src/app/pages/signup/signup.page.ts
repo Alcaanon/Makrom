@@ -1,10 +1,11 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { Cliente } from 'src/app/interfaces/cliente';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { ClienteService } from 'src/app/services/cliente.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -13,17 +14,19 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+
   
+  selectedOption: string = '';
+ 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
-    private clienteService: ClienteService,
     public navCtrl: NavController
+
+
     ) {}
-    
-  selectedOption: string = '';
-  
+
   goToPage(option: string) {
     switch (option) {
       case 'option1':
@@ -57,105 +60,94 @@ ngOnInit(): void{
   this.validaForm();
 }
 
-cliente: Cliente = {
-  name: "",
-  email: "",
-  phone: "",
-  mobilePhone: "", 
-  cpfCnpj: "",
-  postalCode: "",
-  address: "",
-  addressNumber: "",
-  complement: "",
-  province: "",
-  city: "",
-  state: "",
-  externalReference: "",
-  notificationDisabled: false,
-  additionalEmails: "",
-  municipalInscription: "",
-  stateInscription: "",
-  observations: "",
-}
+
+
 
 usuario: Usuario = {
   id: 0,
+  
+  name: "",
+  
+  bday: null,
+  genre: "",
+  cpfcnpj: 0,
+  homenumber: 0,
+  phonenumber: 0,
+
+  cep: 0,
+    address: "",
+    number: 0,
+    nhood: "",
+    city: "",
+    province: "",
+    state: "",
+
+  usuario: "",
   email: "",
-  senha: "",
-  confirma_senha: ""
+  senha: ""
 }
+
+
 
 formulario!: FormGroup;
 
 validaForm(){
   this.formulario = this.formBuilder.group({
-    name: ['', [Validators.required]],
-    cpfCnpj: ['', [Validators.required]],
-    phone: ['', [Validators.required]],
-    mobilePhone: ['', [Validators.required]],
-    address: ['', [Validators.required]],
-    addressNumber: ['', [Validators.required]],
-    complement: ['', [Validators.required]],
-    province: ['', [Validators.required]],
-    city: ['', [Validators.required]],
-    state: ['', [Validators.required]],
-    postalCode: ['', [Validators.required]],
-    externalReference: ['', [Validators.required]],
-    additionalEmails: ['', [Validators.required]],
-    municipalInscription: ['', [Validators.required]],
-    stateInscription: ['', [Validators.required]],
-    observations: ['', [Validators.required]],
-    groupname: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    senha: ['', [Validators.required]],
-    confirma_senha: ['', [Validators.required,  this.equalTo('senha')]],
-  });
-}
+    
+    nome: ['', [Validators.required]],
+    sobrenome: ['', [Validators.required]],
 
-equalTo(field_name: string) {
-  return (control: any) => {
-    const field = control.parent?.get(field_name);
-    if (field && control.value !== field.value) {
-      return { equalTo: true };
-    }
-    return null;
-  };
+    nascimento: ['', [Validators.required]],
+    genero: ['', [Validators.required]],
+    cpfcnpj: ['', [Validators.required]],
+    telefone: ['', [Validators.required]],
+    telefonefixo: ['', [Validators.required]],
+    cep: ['', [Validators.required]],
+    endereco: ['', [Validators.required]],
+    numero: ['', [Validators.required]],
+    
+
+    cidade: ['', [Validators.required]],
+    bairro: ['', [Validators.required]],
+    
+    estado: ['', [Validators.required]],
+    
+    usuario: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    senha: ['', [Validators.required]]
+  });
 }
 
 cadastro(): void{
   const data = {
+
+  nome: this.usuario.name,
+ 
+  nascimento: this.usuario.bday,
+  cpfcnpj: this.usuario.cpfcnpj,
+  telefone: this.usuario.phonenumber,
+  telefonefixo: this.usuario.homenumber,
+  cep: this.usuario.cep,
+  endereco: this.usuario.address,
+  numero: this.usuario.number,
+  
+  cidade: this.usuario.city,
+  bairro: this.usuario.nhood,
+  estado: this.usuario.state,
+
+  usuario: this.usuario.usuario,
   email: this.usuario.email,
   senha: this.usuario.senha
   };
-  this.usuarioService.create(data).subscribe({next: (res) => 
-  {
-    console.log(res);
-    console.log("Usuário cadastrado com sucesso")
+  this.usuarioService.create(data)
+  .subscribe({
+  next: (res) => {
+  console.log(res);
+  console.log("Usuário cadastrado com sucesso")
+  this.navCtrl.navigateForward('/login');
   },
   error: (e) => console.error(e)
   });
-  const datacliente = {
-    name: this.cliente.name,
-    email: this.cliente.email,
-    phone: this.cliente.phone,
-    mobilePhone: this.cliente.mobilePhone, 
-    cpfCnpj: this.cliente.cpfCnpj,
-    postalCode: this.cliente.postalCode,
-    address: this.cliente.address,
-    addressNumber: this.cliente.addressNumber,
-    complement: this.cliente.complement,
-    province: this.cliente.province,
-    city: this.cliente.city,
-    state: this.cliente.state,
-  };
-  this.clienteService.create(datacliente).subscribe({next: (rescli) => 
-    {
-      console.log(rescli);
-      console.log("Cliente cadastrado com sucesso")
-      this.navCtrl.navigateForward('/login');
-    },
-    error: (e) => console.error(e)
-    });
 }
 
 }

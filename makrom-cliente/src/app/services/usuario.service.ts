@@ -3,7 +3,7 @@ import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 
-const usuarioURL = 'http://localhost:3000/usuario/';
+const usuarioURL = 'http://localhost:3000/users/';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class UsuarioService {
   }
 
   findAll() {
-    return this.httpClient.get(usuarioURL+'listar');
+    return this.httpClient.get(usuarioURL+'all');
   }
 
   findOne(data: any): Observable<any>{
