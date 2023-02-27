@@ -11,6 +11,9 @@ import { UsuarioModule } from './usuario/usuario.module';
   imports: [
     AuthModule,
     ConfigModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     HttpModule,
     UsuarioModule
     

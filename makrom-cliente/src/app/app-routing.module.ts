@@ -237,6 +237,10 @@ const routes: Routes = [
   },  {
     path: 'trabalheconosco',
     loadChildren: () => import('./pages/trabalheconosco/trabalheconosco.module').then( m => m.TrabalheconoscoPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   }
 
 

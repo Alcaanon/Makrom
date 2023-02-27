@@ -1,2 +1,3 @@
 makrom-server/src/.env
 makrom-server/.env
+makrom-server/sendgrid.env

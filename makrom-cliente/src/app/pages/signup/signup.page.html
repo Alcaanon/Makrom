@@ -1,4 +1,136 @@
+<ion-header class="header">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
 
+  <a href="/">
+    <ion-img src="../../../assets/images-coopeere/coopere.png"></ion-img>
+    <span>CNPJ: 40.409.711/0001-39</span>
+  </a>
+  <ion-button fill="clear" [routerLink]="['/']" class="sair text-right">Sair</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="form-with-bg">
+    <div class="bg-background">
+      <img class="background" src="https://coopeere.microcampos.com.br/img/turbinas-4.jfif">  
+    </div>
+    <div class="form-content">
+      <div class="card p-4 mb-4">
+        <form id="formulario-cadastro" (submit)="cadastro()">
+          <input type="hidden" name="_token" value="CsbBXaFkBxwza5YHajzScu1cX0T8qLxYMLNfdzDj" wfd-id="id0">        
+          <input type="hidden" name="_method" value="put" wfd-id="id1">                
+            <div class="form-group-heading">Realize o cadastro e torne-se um Coopeerado</div>
+              <div class="form-group grid-cols-6">
+                <div class="form-group-title">Dados Pessoais</div>
+                <label class="form-label" for="nome">Nome Completo*</label>
+                <div class="col-span-5">
+                  <div class="input-group">
+                    <input [(ngModel)]="cliente.name"  type="text" class="form-control" id="nome" name="nome" value="" required="" wfd-id="id2">
+                  </div>
+                </div>
+                <label class="form-label" for="email">E-mail*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="cliente.email" [(ngModel)]="usuario.email"  type="text" class="form-control" id="email" name="email" value="" required="" wfd-id="id3">
+                </div>
+                <label class="form-label" for="cpf_cnpj">CPF/CNPJ*</label>
+                <div class="input-group w-60">
+                  <input [(ngModel)]="cliente.cpfCnpj" type="text" class="form-control usuario-documento" id="cpf_cnpj" name="cpf_cnpj" value="" size="25" required="" maxlength="14" wfd-id="id4">
+                </div>
+                <label class="form-label" for="telefone_celular">Telefone Celular*</label>
+                <div class="input-group w-60">
+                  <input [(ngModel)]="cliente.mobilePhone" type="text" class="form-control" id="telefone_celular" name="telefone_celular" size="16" value="" required="" wfd-id="id5">
+                </div>
+                <label class="form-label" for="telefone_fixo">Telefone Fixo</label>
+                <div class="input-group w-60">
+                  <input [(ngModel)]="cliente.phone" type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" size="16" value="" wfd-id="id6">
+                </div>
+                <label class="form-label" for="senha">Senha*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha" name="senha" required="" wfd-id="id7">
+                </div>
+                <label class="form-label" for="confirmar_senha">Confirmar Senha*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="usuario.confirma_senha" type="password" class="form-control" id="confirma_senha" name="confirma_senha" required="" wfd-id="id8">
+                </div>
+                <div class="form-group-title">Endereço*</div>
+                <label class="form-label" for="cep">CEP*</label>
+                <div class="col-span-5">
+                  <div class="flex">
+                    <div class="input-group w-25">
+                      <input [(ngModel)]="cliente.postalCode" class="form-control" type="text" id="cep" name="cep" value="" size="10" required="" wfd-id="id9">
+                    </div>
+                    <div class="p-2 d-none" id="loading-cep">
+                      <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
+                  <small class="text-muted">O mesmo que consta na conta de energia</small>
+                </div>
+                <label class="form-label" for="endereco">Endereço*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="cliente.address" type="text" class="form-control" id="endereco" name="endereco" value="" required="" wfd-id="id10">
+                </div>
+                <label class="form-label" for="endereco">Número*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="cliente.addressNumber" type="text" class="form-control" id="numero" name="numero" value="" required="" wfd-id="id11">
+                </div>
+                <label class="form-label" for="bairro">Bairro*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="cliente.province" type="text" class="form-control" id="bairro" name="bairro" value="" required="" wfd-id="id12">
+                </div>
+                <label class="form-label" for="cidade">Cidade*</label>
+                <div class="input-group">
+                  <input [(ngModel)]="cliente.city" type="text" class="form-control" id="cidade" name="cidade" value="" required="" wfd-id="id13">
+                </div>
+                <label class="form-label" for="estado">Estado*</label>
+                  <div class="input-group">
+                    <select [(ngModel)]="cliente.state" class="form-select" id="estado" name="estado" required="">
+                    <option value="">UF</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    </select>
+                  </div>
+                  <div class="form-actions mt-4">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</ion-content>
+<ion-footer></ion-footer>
 
 
 <!-- <ion-header class="header-header">
@@ -17,25 +149,8 @@
     
   
   </ion-header> -->
-  
-  <ion-header class="header">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
-    
-    <a href="/">
-      <ion-img src="../../../assets/images-coopeere/coopere.png"></ion-img>
-      <span>CNPJ: 40.409.711/0001-39</span>
-    </a>
-    
-    <ion-button fill="clear" [routerLink]="['/']" class="sair text-right">Sair</ion-button>
-  </ion-header>
 
-  <!--
+<!--
 
   
     <div class="container">
@@ -178,146 +293,3 @@
 
   
   -->
-
-
-<ion-content>
-
-  <div class="form-with-bg">
-  <div class="bg-background">
-      <img class="background" src="https://coopeere.microcampos.com.br/img/turbinas-4.jfif">  
-  </div>
-<div class="form-content">
-  <div class="card p-4 mb-4">
-    <form method="POST" action="https://coopeere.microcampos.com.br/precadastro_insert">
-      <input type="hidden" name="_token" value="CsbBXaFkBxwza5YHajzScu1cX0T8qLxYMLNfdzDj" wfd-id="id0">        <input type="hidden" name="_method" value="put" wfd-id="id1">                
-      <div class="form-group-heading">Realize o cadastro e torne-se um Coopeerado</div>
-
-      <div class="form-group grid-cols-6">
-
-        <div class="form-group-title">Dados Pessoais</div>
-
-        <label class="form-label" for="nome">Nome Completo*</label>
-        <div class="col-span-5">
-          <div class="input-group">
-            <input [(ngModel)]="usuario.name" type="text" class="form-control" id="nome" name="nome" value="" required="" wfd-id="id2">
-          </div>
-        </div>
-
-        <label class="form-label" for="email">E-mail*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.email"  type="text" class="form-control" id="email" name="email" value="" required="" wfd-id="id3">
-        </div>
-
-        <label class="form-label" for="cpf_cnpj">CPF/CNPJ*</label>
-        <div class="input-group w-60">
-          <input [(ngModel)]="usuario.cpfcnpj" type="text" class="form-control usuario-documento" id="cpf_cnpj" name="cpf_cnpj" value="" size="25" required="" maxlength="14" wfd-id="id4">
-        </div>
-
-        <label class="form-label" for="telefone_celular">Telefone Celular*</label>
-        <div class="input-group w-60">
-          <input [(ngModel)]="usuario.phonenumber" type="text" class="form-control" id="telefone_celular" name="telefone_celular" size="16" value="" required="" wfd-id="id5">
-        </div>
-
-        <label class="form-label" for="telefone_fixo">Telefone Fixo</label>
-        <div class="input-group w-60">
-          <input [(ngModel)]="usuario.homenumber" type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" size="16" value="" wfd-id="id6">
-        </div>
-
-        <label class="form-label" for="senha">Senha*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha" name="senha" required="" wfd-id="id7">
-        </div>
-
-        <label class="form-label" for="confirmar_senha">Confirmar Senha*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="confirma_senha" name="confirma_senha" required="" wfd-id="id8">
-        </div>
-
-        <div class="form-group-title">Endereço*</div>
-
-        <label class="form-label" for="cep">CEP*</label>
-        <div class="col-span-5">
-          <div class="flex">
-            <div class="input-group w-25">
-              <input [(ngModel)]="usuario.cep" class="form-control" type="text" id="cep" name="cep" value="" size="10" required="" wfd-id="id9">
-            </div>
-            <div class="p-2 d-none" id="loading-cep">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          </div>
-          <small class="text-muted">
-            O mesmo que consta na conta de energia
-          </small>
-        </div>
-        
-        <label class="form-label" for="endereco">Endereço*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.address" type="text" class="form-control" id="endereco" name="endereco" value="" required="" wfd-id="id10">
-        </div>
-
-        <label class="form-label" for="endereco">Número*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.number" type="text" class="form-control" id="numero" name="numero" value="" required="" wfd-id="id11">
-        </div>
-
-        <label class="form-label" for="bairro">Bairro*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.nhood" type="text" class="form-control" id="bairro" name="bairro" value="" required="" wfd-id="id12">
-        </div>
-
-        <label class="form-label" for="cidade">Cidade*</label>
-        <div class="input-group">
-          <input [(ngModel)]="usuario.province" type="text" class="form-control" id="cidade" name="cidade" value="" required="" wfd-id="id13">
-        </div>
-
-        <label class="form-label" for="estado">Estado*</label>
-        <div class="input-group">
-          <select [(ngModel)]="usuario.state" class="form-select" id="estado" name="estado" required="">
-            <option value="">UF</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-          </select>
-        </div>
-
-        <div class="form-actions mt-4">
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-
-      </div>
-    </form>
-  </div>
-</div>
-</div>
-
-</ion-content>
-
-
-
-<ion-footer></ion-footer>
