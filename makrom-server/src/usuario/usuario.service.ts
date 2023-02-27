@@ -11,7 +11,7 @@ export class UsuarioService {
   constructor(
     @Inject('USUARIO_REPOSITORY')
     private usuarioRepository: Repository<Usuario>,
-  ) {}
+    ) { }
 
   async listar(): Promise<Usuario[]> {
     return this.usuarioRepository.find();
@@ -37,7 +37,7 @@ export class UsuarioService {
   }
   
   async findOne(email: string): Promise<Usuario | undefined> {
-    return this.usuarioRepository.findOne({email: email});
+    return this.usuarioRepository.findOneBy({email});
   }
 
   

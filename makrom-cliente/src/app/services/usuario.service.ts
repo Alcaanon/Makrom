@@ -17,7 +17,7 @@ export class UsuarioService {
   }
 
   findAll() {
-    return this.httpClient.get(usuarioURL+'listar');
+    return this.httpClient.get(usuarioURL+'all');
   }
 
   findOne(data: any): Observable<any>{
@@ -36,6 +36,10 @@ export class UsuarioService {
 
   login(body: any): Observable<any> {
     return this.httpClient.post(usuarioURL+'login', body);
+  }
+
+  resetpassword(data: any): Observable<any> {
+    return this.httpClient.post(usuarioURL+'resetpassword', data);
   }
 
   //LOGOUT?

@@ -1,74 +1,80 @@
 <ion-header class="header-header">
+  <link rel="canonical" href="https://fonts.google.com/specimen/Open%2BSans">
   
-  <div [routerLink]="['/login']">
-    <ion-icon name="person"></ion-icon>
-    <ion-label class="label-header" >Login</ion-label>
-  </div>
-    |
-    <div style="padding-left: 15px;" [routerLink]="['/signup']" >
-      <ion-icon name="pencil"></ion-icon>
-      <ion-label >Cadastro</ion-label>
+    
+    
+    <div [routerLink]="['/login']">
+      <ion-icon name="person"></ion-icon>
+      <ion-label class="label-header" >Login</ion-label>
     </div>
-    
-  
-  </ion-header>
-  
-  <ion-header class="header">
-    
-    
-      <ion-img style="max-width: 10%;" src="../../../assets/images/coopere.png"></ion-img>
-    
-  
-    
-    <ion-button fill="clear" [routerLink]="['/onboarding']">Home</ion-button>
-    
-    <div class="dropdown">
-      <a href="#">A COOPEERE</a>
-      <div class="dropdown-content">
-        <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
-        <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
-        <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+      |
+      <div style="padding-left: 15px;" [routerLink]="['/signup']" >
+        <ion-icon name="pencil"></ion-icon>
+        <ion-label >Cadastro</ion-label>
       </div>
-    </div>
-  
-    <ion-button fill="clear" [routerLink]="['/legislacao']">Legislação</ion-button>
-    <ion-button fill="clear" [routerLink]="['/estatuto']">Estatuto</ion-button>
-    <ion-button fill="clear" [routerLink]="['/vantagens']">Vantagens</ion-button>
-    <ion-button fill="clear" [routerLink]="['/parceiros']">Parceiros</ion-button>
-    <ion-button fill="clear" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
-  
-  </ion-header>
-  
-  
+      
+    
+    </ion-header>
+    
+    <ion-header class="header">
+      
+      
+        <ion-img id="logo" [routerLink]="['/onboarding']" src="../../../assets/images-coopeere/coopere.png"></ion-img>
+      
+    
+      
+      <ion-button fill="clear"  [routerLink]="['/onboarding']">Home</ion-button>
+      
+      <div class="dropdown">
+        <a [routerLink]="['/onboarding']" routerLinkActive="active-link">A COOPEERE <svg class="arrowicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg></a>
+        <div class="dropdown-content">
+          <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
+          <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
+          <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+        </div>
+      </div>
+    
+      <ion-button fill="clear"  [routerLink]="['/estatuto']" routerLinkActive="active-link">Estatuto</ion-button>
+      <ion-button fill="clear"  [routerLink]="['/legislacao']" routerLinkActive="active-link">Legislação</ion-button>
+      <ion-button fill="clear" [routerLink]="['/vantagens']" routerLinkActive="active-link">Vantagens</ion-button>
+      <ion-button fill="clear"  [routerLink]="['/parceiros']" routerLinkActive="active-link">Parceiros</ion-button>
+      <ion-button fill="clear" [routerLink]="['/faleconosco']" routerLinkActive="active-link">Fale Conosco</ion-button>
+      <ion-icon class="search" name="search"></ion-icon>
+    </ion-header>
   <ion-content>
-    
+      
+    <div class="container">
+          <section>
+              <h1 class="title">Agenda</h1>
+              <h2>VII CONGRESSO DE ENSINO, PESQUISA E EXTENSÃO (CONEPE)</h2>
+              <h3>Prezados Congressistas,</h3>
+              <p>O Instituto Federal Fluminense campus Campos Guarus realizará o VII CONGRESSO DE ENSINO, PESQUISA E EXTENSÃO (CONEPE) com o tema “Educação e Sociedade: A Nova Fronteira da Ciência”, transmitido pelo canal do campus: IFF Tube Campus Guarus, no período de 23 a 27 de novembro de 2020.</p>
+              <p>O evento será constituído de Webinares no formato de palestras, mesa redondas, minicursos, oficinas, apresentações de resumos acadêmicos no formato oral e vídeo-pôsteres, além do Desafio CONEPE de Criatividade e Inovação prático, propiciando a discussão de temas relevantes para a construção e difusão de conhecimentos em nosso País.</p>
+                <p>As submissões dos trabalhos ocorrerão entre os dias 08 de setembro a 08 de outubro de 2020.</p>
+                <p>As inscrições para Minicursos e Oficinas serão realizadas entre os dias 09 e 20 de novembro de 2020.</p>
+                <p>Confira a programação completa no site do evento<br> http://conepe.guarus.iff.edu.br/programacao.</p>
+                <p>Aproveitamos a oportunidade para solicitar a ampla divulgação do evento.</p>
+                <p>—</p>
+                <p>Comissão Organizadora do IV Congresso de Ensino, Pesquisa e Extensão (CONEPE)</p>
+                <p>Instituto Federal Fluminense campus Campos Guarus</p>
+                <img src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/foto1-e1603480277592.jpeg">
+                <h2 style="text-align: center;">VI CONGRESSO DE ENSINO, PESQUISA E EXTENSÃO<br> (CONEPE)</h2>
+                <img src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/foto2-e1603480964955.jpeg">
+                <h2 style="text-align: center;">V CONGRESSO DE ENSINO, PESQUISA E EXTENSÃO<br> (CONEPE)</h2>
+                <img src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/foto3-576x1024.jpeg">
+                <h2 style="text-align: center;">Wind Farm & Ind. Eólica Offshore</h2>
+                <img src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/foto4-614x1024.jpeg">
+                <h2 style="text-align: center;">CONGRESSO LATINO AMERICANO DE DIREITO</h2>
+                <img src="https://www.coopeere.eco.br/wp-content/uploads/2020/10/foto5-e1603481253536-1024x720.jpeg">
+  
+          </section>
+        
+          <ion-list>
+            <ion-label fill="clear" [routerLink]="['/eventos']" >Eventos</ion-label>
+            <ion-label fill="clear" [routerLink]="['/publicacoes']">Publicações</ion-label>
+            <ion-label style="color: #7b9a6e;" fill="clear" [routerLink]="['/agenda']" routerLinkActive="active-link">Agenda</ion-label>
+            <ion-label fill="clear" [routerLink]="['/galeria']">Galeria de fotos</ion-label>
+            <ion-label fill="clear" [routerLink]="['/trabalheconosco']">Trabalhe Conosco</ion-label>
+          </ion-list>
+    </div>
   </ion-content>
-  
-  
-
-
-<ion-footer class="footer"> 
-    
-  <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
-
-  <div class="menu-footer">
-    <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
-    <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
-    <ion-label [routerLink]="['/agenda']">Agenda</ion-label>
-    <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
-    <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
-  </div>
-
-  <div class="social-media-icons">
-
-<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
-
-<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
-    
-    <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
-    <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
-    <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
-  </div>
-  
-  
-</ion-footer>
