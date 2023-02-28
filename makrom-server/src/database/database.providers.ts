@@ -5,10 +5,10 @@ export const databaseProviders = [
     provide: 'DATABASE_CONNECTION',
     useFactory: async () => await createConnection({
       type: 'postgres',
-      host: 'containers-us-west-85.railway.app',
-      port: 6632,
+      host: 'containers-us-west-73.railway.app',
+      port: 7747,
       username: 'postgres',
-      password: 'Wz2OAX1G839aAOqWyvp4',
+      password: 'kncSRscAWAhib8o4I0KI',
       database: 'railway',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
